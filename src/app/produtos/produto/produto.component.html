@@ -1,10 +1,10 @@
 <section class="product__container">
     <div class="product-image__container">
-        <img src="/assets/monitor-1.jpg" alt>
+        <img [src]="produto?.imagem" alt>
     </div>
     <div class="product-description__container">
-        <h2 class="product__name">Monitor muito bo</h2>
-        <h3 class="product__price">R$ 1.200,00</h3>
+        <h2 class="product__name">{{ produto?.descricao }}</h2>
+        <h3 class="product__price">{{ produto?.preco | currency: 'BRL' }}</h3>
         <p>Estoque disponível</p>
         <label>
             Quantidade:
