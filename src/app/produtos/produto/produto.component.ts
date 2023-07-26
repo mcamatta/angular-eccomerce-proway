@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class ProdutoComponent implements OnInit {
 
   produto: IProduto | undefined;
+  quantidade: number = 1;
 
   constructor(
     private produtosService: ProdutosService,
@@ -21,8 +22,6 @@ export class ProdutoComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
     const produtoId = Number(routeParams.get('id'));
     this.produto = this.produtosService.getOne(produtoId);
-    console.log(this.produto);
-    
   }
 
 }
