@@ -1,3 +1,4 @@
+import { NotificacaoService } from './../../notificacao.service';
 import { IProduto } from 'src/app/produtos';
 import { ProdutosService } from './../../produtos.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,6 +16,7 @@ export class ProdutoComponent implements OnInit {
 
   constructor(
     private produtosService: ProdutosService,
+    private notificacaoService: NotificacaoService,
     private route: ActivatedRoute
   ) {}
 
@@ -24,4 +26,7 @@ export class ProdutoComponent implements OnInit {
     this.produto = this.produtosService.getOne(produtoId);
   }
 
+  adicionarAoCarrinho(): void {
+    this.notificacaoService.notificar('O produto foi adicionado ao carrinho');
+  }
 }
